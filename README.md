@@ -2,6 +2,12 @@
 
 A real-time intrusion detection system (IDS) built using Python. This project aims to enhance network security by monitoring and analyzing traffic patterns to detect potential threats.
 
+## Authors
+
+- [rohitjoshi21](https://github.com/rohitjoshi21)
+- [NayanPandey371](https://github.com/NayanPandey371)
+- [Nir-Roman](https://github.com/Nir-Roman)
+
 ## Features
 
 - Real-time monitoring of network traffic
