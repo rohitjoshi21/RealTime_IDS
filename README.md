@@ -42,17 +42,6 @@ A real-time intrusion detection system (IDS) built using Python. This project ai
 
 ![Live Capture](medias/livecapture.png)
 
-## Project Structure
-
-RealTime_IDS/
-├── docs/            # Documentation files
-├── src/             # Source code
-│   ├── main.py      # Main entry point for the application
-│   └── ...          # Other source files
-├── tests/           # Testing scripts
-├── requirements.txt  # List of dependencies
-└── README.md        # Project documentation
-
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or suggestions.
