@@ -10,10 +10,11 @@ from preprocessor import preprocess
 import xgboost as xgb
 
 MODELPATH = 'xgboost3.joblib'
-cicflowmeterpath = '/home/riemann/.cache/pypoetry/virtualenvs/'
+CICFLOWMETERPATH = '/home/riemann/.cache/pypoetry/virtualenvs/'
+NETWORKINTERFACE = 'wlp1s0'
+
+
 model = joblib.load(MODELPATH)
-
-
 labels = {0: "Benign", 1: "BruteForce", 2: "DDoS", 3: "DoS", 4: "Other", 5: "PortScan", 6: "WebAttack"}
 
 # Directories for storing packets and features
@@ -34,7 +35,7 @@ def capture_packet():
         timestamp = time.strftime("%Y%m%d-%H%M%S")
         pcap_file = os.path.join(packet_dir, f'capture_{timestamp}.pcap')
         
-        capture = pyshark.LiveCapture(interface='wlp1s0', output_file=pcap_file)
+        capture = pyshark.LiveCapture(interface=NETWORKINTERFACE, output_file=pcap_file)
         capture.sniff(timeout=5)  # Capture for 5 seconds (adjust as needed)
         
         with pcap_lock:
@@ -46,7 +47,7 @@ def extract_features(pcap_file):
     feature_file = os.path.join(feature_dir, f'output_{timestamp}.csv')
     
     # Activate virtual environment and run CICFlowMeter
-    activate_env = 'source {cicflowmeterpath}cicflowmeter-J2zf1J8o-py3.11/bin/activate && '
+    activate_env = 'source {CICFLOWMETERPATH}cicflowmeter-J2zf1J8o-py3.11/bin/activate && '
     cmd = f'{activate_env} cicflowmeter -f {pcap_file} -c {feature_file} &>logs.txt'
 
     subprocess.run(cmd, shell=True, executable='/bin/bash')  # Ensure using bash to run the command

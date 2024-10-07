@@ -19,14 +19,18 @@ A real-time intrusion detection system (IDS) built using Python. This project ai
 3. Set up a virtual environment and install dependencies:
    pip install -r requirements.txt
 
+4. Install `cicflowmeter` using Poetry:
+   poetry add cicflowmeter
+
 ## Usage
 
-Run the main script to start monitoring:
-python src/main.py
+1. Update the `cicflowmeter` path and Wi-Fi interface name in `src/name.py`.
+2. Run the main script with root privileges to start monitoring:
+   sudo python src/main.py
 
 ## Screenshot
 
-![Live Capture](medias/livecapture.png)
+![Live Capture](medias/livecapture.jpeg)
 
 ## Project Structure
 
