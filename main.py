@@ -6,13 +6,13 @@ import os
 import joblib
 import time
 from termcolor import colored  # Importing termcolor
-from preprocessor import preprocess, config
+from preprocessor import preprocess
 import xgboost as xgb
 
 MODELPATH = 'xgboost3.joblib'
+cicflowmeterpath = '/home/riemann/.cache/pypoetry/virtualenvs/'
 model = joblib.load(MODELPATH)
 
-packets = config
 
 labels = {0: "Benign", 1: "BruteForce", 2: "DDoS", 3: "DoS", 4: "Other", 5: "PortScan", 6: "WebAttack"}
 
@@ -42,12 +42,11 @@ def capture_packet():
 
 # Function to extract features using CICFlowMeter and return a dataframe
 def extract_features(pcap_file):
-    # Create a new filename for the features output based on the current timestamp
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     feature_file = os.path.join(feature_dir, f'output_{timestamp}.csv')
     
     # Activate virtual environment and run CICFlowMeter
-    activate_env = 'source /home/riemann/.cache/pypoetry/virtualenvs/cicflowmeter-J2zf1J8o-py3.11/bin/activate && '
+    activate_env = 'source {cicflowmeterpath}cicflowmeter-J2zf1J8o-py3.11/bin/activate && '
     cmd = f'{activate_env} cicflowmeter -f {pcap_file} -c {feature_file} &>logs.txt'
 
     subprocess.run(cmd, shell=True, executable='/bin/bash')  # Ensure using bash to run the command

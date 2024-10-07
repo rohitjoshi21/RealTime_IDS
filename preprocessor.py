@@ -2,7 +2,6 @@ import pandas as pd
 import joblib
 import os
 
-config = [0,0,3,0,0,0,0,0,0,0,3,3,3,3,0,3,3,3,0,3,3,0,0,0,0]
 
 def preprocess(inputcsv):
 
