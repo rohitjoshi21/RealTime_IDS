@@ -1,48 +1,49 @@
-# intrusion
+# RealTime_IDS
 
-## Introduction
-## Goals
-## Contributors
-## Project Architecture
+A real-time intrusion detection system (IDS) built using Python. This project aims to enhance network security by monitoring and analyzing traffic patterns to detect potential threats.
 
+## Features
 
-# Status
-## Known Issue
-## High Level Next Steps
+- Real-time monitoring of network traffic
+- Anomaly detection using machine learning algorithms
+- Easy-to-use interface
 
-
-# Usage
 ## Installation
-To begin this project, use the included `Makefile`
 
-#### Creating Virtual Environment
+1. Clone the repository:
+   git clone https://github.com/rohitjoshi21/RealTime_IDS.git
 
-This package is built using `python-3.8`. 
-We recommend creating a virtual environment and using a matching version to ensure compatibility.
+2. Navigate to the project directory:
+   cd RealTime_IDS
 
-#### pre-commit
+3. Set up a virtual environment and install dependencies:
+   pip install -r requirements.txt
 
-`pre-commit` will automatically format and lint your code. You can install using this by using
-`make use-pre-commit`. It will take effect on your next `git commit`
+## Usage
 
-#### pip-tools
+Run the main script to start monitoring:
+python src/main.py
 
-The method of managing dependencies in this package is using `pip-tools`. To begin, run `make use-pip-tools` to install. 
+## Project Structure
 
-Then when adding a new package requirement, update the `requirements.in` file with 
-the package name. You can include a specific version if desired but it is not necessary. 
+RealTime_IDS/
+├── docs/            # Documentation files
+├── src/             # Source code
+│   ├── main.py      # Main entry point for the application
+│   └── ...          # Other source files
+├── tests/           # Testing scripts
+├── requirements.txt  # List of dependencies
+└── README.md        # Project documentation
 
-To install and use the new dependency you can run `make deps-install` or equivalently `make`
+## Contributing
 
-If you have other packages installed in the environment that are no longer needed, you can you `make deps-sync` to ensure that your current development environment matches the `requirements` files. 
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or suggestions.
 
-## Usage Instructions
+## License
 
+This project is licensed under the MIT License.
 
-# Data Source
-## Code Structure
-## Artifacts Location
+## Contact
 
-# Results
-## Metrics Used
-## Evaluation Results
+For inquiries or feedback, please reach out to rohitjoshi21.
+
