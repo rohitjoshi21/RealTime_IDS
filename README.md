@@ -24,6 +24,10 @@ A real-time intrusion detection system (IDS) built using Python. This project ai
 Run the main script to start monitoring:
 python src/main.py
 
+## Screenshot
+
+![Live Capture](medias/livecapture.png)
+
 ## Project Structure
 
 RealTime_IDS/
@@ -46,4 +50,3 @@ This project is licensed under the MIT License.
 ## Contact
 
 For inquiries or feedback, please reach out to rohitjoshi21.
-
